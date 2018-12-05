@@ -6,6 +6,8 @@ from policy_test import *
 from user_test import UserFixture
 from multiple_vn_vm_test import *
 from tcutils.wrappers import preposttest_wrapper
+from tools import debug
+
 sys.path.append(os.path.realpath('tcutils/pkgs/Traffic'))
 from traffic.core.stream import Stream
 from traffic.core.profile import create, ContinuousProfile
@@ -288,6 +290,7 @@ echo "Hello World.  The time is now $(date -R)!" | tee /tmp/output.txt
         Pass criteria: Ping between the VMs should go thru fine.
         Maintainer : ganeshahv@juniper.net
         '''
+        debug.print_out_all_variables()
         vn1_name = get_random_name('vn30')
         vn1_vm1_name = get_random_name('vm1')
         vn1_vm2_name = get_random_name('vm2')
